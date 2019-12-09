@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.shop.admin.mapper.AdminMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.shop.admin.model.Admin">
+        <result column="name" property="name"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `name`,
+        `password`
+    </sql>
+
+<insert id="addAdmin">
+    insert into admin(name,password) values (#{name},#{password})
+</insert>
+
+    <delete id="delAdmin">
+        delete from admin where id=#{id}
+    </delete>
+
+    <select id="selectAdmin" resultType="com.example.shop.admin.model.Admin">
+        select * from admin where name=#{name}
+    </select>
+
+
+</mapper>
+

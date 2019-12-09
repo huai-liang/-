@@ -1,0 +1,159 @@
+.hello {
+  width: 1190px;
+  margin: 0 auto;
+}
+.zhucetop {
+  height: 133px;
+  border-bottom: rgb(230, 228, 228) solid 1px;
+}
+.zhuce {
+  background-color: #ea2c1e;
+  width: 100%;
+  text-align: center;
+}
+.zhucebody {
+  width: 1000px;
+  text-align: center;
+  height: 420px;
+  margin-left: 20%;
+}
+.grid_c1 {
+  width: 1190px;
+  margin: 0 auto;
+}
+.box_input {
+  width: 350px;
+  float: right;
+  margin-top: 3%;
+  height: 380px;
+  background: #fff;
+}
+.zhucebody1 {
+  float: right;
+  margin-top: 5%;
+  margin-right: 15%;
+}
+.regit {
+  width: 150px;
+  float: left;
+  text-align: center;
+}
+.regit1 {
+  line-height: 133px;
+  float: left;
+  font-size: 30px;
+}
+.regit3 {
+  line-height: 133px;
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+.regit2 {
+  text-align: center;
+  width: 300px;
+  margin-top: 50px;
+  margin-left: 30%;
+}
+.regit2_1 {
+  width: 96px;
+  float: left;
+}
+.regit2_2 {
+  width: 200px;
+  height: 30px;
+  float: left;
+}
+.regit2_3 {
+  width: 200px;
+  height: 30px;
+  float: left;
+}
+.regit2_4 {
+  width: 200px;
+  height: 30px;
+  float: right;
+}
+.weibu5 {
+  background-color: #fff;
+  height: 30px;
+}
+.weibu5 ul {
+  list-style-type: none;
+  color: rgb(102, 100, 100);
+  margin-left: 15%;
+}
+.weibu5 ul li {
+  float: left;
+  padding-left: 10px;
+}
+.weibu6 {
+  background-color: #fff;
+  height: 30px;
+}
+.weibu6 ul {
+  list-style-type: none;
+  color: rgb(102, 100, 100);
+  margin-left: 19%;
+  font-size: 14px;
+}
+.weibu6 ul li {
+  float: left;
+  padding-left: 10px;
+}
+.weibu7 {
+  background-color: #fff;
+  height: 30px;
+}
+.weibu7 ul {
+  list-style-type: none;
+  color: rgb(102, 100, 100);
+  margin-left: 17%;
+  font-size: 14px;
+}
+.weibu7 ul li {
+  float: left;
+  padding-left: 10px;
+}
+.weibu8 {
+  background-color: #fff;
+  height: 30px;
+}
+.weibu8 ul {
+  list-style-type: none;
+  color: rgb(102, 100, 100);
+  margin-left: 26%;
+  font-size: 14px;
+}
+.weibu8 ul li {
+  float: left;
+  padding-left: 10px;
+}
+.weibu9 {
+  background-color: #fff;
+  height: 30px;
+}
+.weibu9 ul {
+  list-style-type: none;
+  color: rgb(102, 100, 100);
+  margin-left: 35%;
+  font-size: 14px;
+}
+.weibu9 ul li {
+  float: left;
+  padding-left: 10px;
+}
+.weibu10 {
+  background-color: #fff;
+  height: 30px;
+}
+.weibu10 ul {
+  list-style-type: none;
+  color: rgb(102, 100, 100);
+  margin-left: 40%;
+  font-size: 14px;
+}
+.weibu10 ul li {
+  float: left;
+  padding-left: 10px;
+}

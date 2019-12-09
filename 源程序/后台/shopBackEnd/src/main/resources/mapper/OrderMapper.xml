@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.shop.order.mapper.OrderMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.shop.order.model.Order">
+        <result column="create_time" property="createTime"/>
+        <result column="phone" property="phone"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="total" property="total"/>
+        <result column="status" property="status"/>
+        <result column="num" property="num"/>
+        <result column="address" property="address"/>
+        <result column="title" property="title"/>
+        <result column="imageSrc" property="imageSrc"/>
+    </resultMap>
+    <!--auto generated Code-->
+    <!--    添加订单-->
+    <insert id="addOrder" parameterType="java.util.List">
+    INSERT INTO `order`(goods_id,total,create_time,phone,status,num,`address`,`title`,`imageSrc`)
+    <!--    VALUES(#{goodsId},#{total},Now(),#{phone},0,#{num},"浙江") -->
+    values
+    <foreach collection="list" separator="," item="item" index="index">
+        (#{item.goodsId},#{item.total},Now(),#{item.phone},0,#{item.num},#{item.address},#{item.title},#{item.imageSrc})
+    </foreach>
+       </insert>
+       <!--    删除订单-->
+   <delete id="delOrder">
+       DELETE FROM `order` WHERE phone in
+       <foreach collection="phone" open="(" separator="," close=")" item="phoneitem">
+           #{phoneitem}
+       </foreach>
+        AND goods_id in
+       <foreach collection="list" open="(" separator="," close=")" item="item">
+         #{item}
+       </foreach>
+   </delete>
+
+<!--    查询订单-->
+    <select id="selectOrder" resultMap="AllColumnMap">
+      select *
+      from `order`
+      <if test=" null != phone and '' != phone">
+          where  phone=#{phone}
+      </if>
+
+
+    </select>
+ </mapper>

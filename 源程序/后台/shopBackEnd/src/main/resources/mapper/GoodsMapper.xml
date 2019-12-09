@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.shop.goods.mapper.GoodsMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.shop.goods.model.Goods">
+        <result column="title" property="title"/>
+        <result column="image_src" property="imageSrc"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="price" property="price"/>
+        <result column="keytitle" property="keytitle"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `title`,
+        `image_src`,
+        `goods_id`,
+        `price`,
+        `reserves`
+    </sql>
+    <!--搜索商品-->
+    <select id="selectGoods" resultMap="AllColumnMap">
+        select
+        <include refid="all_column"/>
+        from goods
+        where title like CONCAT("%",#{title},"%") and status="0"
+    </select>
+<!--选择商品-->
+    <select id="Goods" resultMap="AllColumnMap">
+        select
+        <include refid="all_column"/>
+        from goods  where status='0' LIMIT #{pageNo},#{pageNum}
+    </select>
+
+    <!--上下架商品-->
+    <update id="updataGoods">
+        update goods set status=#{status} where goods_id=#{goodsId}
+    </update>
+
+    <select id="select" resultMap="AllColumnMap">
+        select * from goods
+    </select>
+
+    <delete id="del">
+        delete from goods where goods_id=#{goodsId}
+    </delete>
+</mapper>
+

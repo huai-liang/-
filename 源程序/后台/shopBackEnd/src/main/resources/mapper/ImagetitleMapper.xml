@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.shop.imagetitle.mapper.ImagetitleMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.shop.imagetitle.model.Imagetitle">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="img_src" property="imgSrc"/>
+        <result column="keytitle" property="keytitle"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `title`,
+        `img_src`,
+        `keytitle`
+    </sql>
+
+<insert id="add">
+    insert into imagetitle(imgSrc,title) values (#{imgSrc},#{title})
+</insert>
+    
+    <select id="select" resultMap="AllColumnMap">
+        select * from imagetitle LIMIT #{start},#{end}
+    </select>
+</mapper>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.shop.type.mapper.TypeMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.shop.type.model.Type">
+        <result column="main_title" property="main_title"/>
+        <result column="type_id1" property="type_id1"/>
+</resultMap>
+    <resultMap id="AllColumnMap1" type="com.example.shop.type.model.Type2">
+        <result column="type_id2" property="type_id2"/>
+        <result column="type_id1" property="type_id1"/>
+        <result column="type_name2" property="type_name2"/>
+    </resultMap>
+    <resultMap id="AllColumnMap2" type="com.example.shop.type.model.Type3">
+        <result column="type_id2" property="type_id2"/>
+        <result column="type_name3" property="type_name3"/>
+    </resultMap>
+
+    <select id="getTypeList" resultMap="AllColumnMap">
+        SELECT type_id1,main_title from type WHERE main_title = #{main_title};
+    </select>
+
+    <select id="getType2List" resultMap="AllColumnMap1">
+        select type_id1,type_id2,type_name2 from type2 WHERE type_id1 = #{type_id1};
+    </select>
+
+    <select id="getType3List" resultMap="AllColumnMap2">
+        select type_id2,type_name3 from type3 WHERE type_id2 = #{type_id2};
+    </select>
+</mapper>
+

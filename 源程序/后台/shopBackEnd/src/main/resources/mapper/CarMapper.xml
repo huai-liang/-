@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.shop.shopcar.mapper.CarMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.shop.shopcar.model.Car">
+        <result column="num" property="num"/>
+        <result column="price" property="price"/>
+        <result column="phone" property="phone"/>
+        <result column="title" property="title"/>
+        <result column="image_src" property="imageSrc"/>
+        <result column="goods_id" property="goodsId"/>
+    </resultMap>
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `phone`,
+        `title`,
+        `image_src`,
+        `price`,
+        `num`,
+        `goods_id`
+    </sql>
+    <!--加入购物车-->
+    <insert id="addCar">
+        insert into car(goods_id,phone,title,image_src,price,num)values (#{goodsId},#{phone}
+        ,#{title},#{imageSrc},#{price},#{num})
+    </insert>
+    <!--删除购物车-->
+    <delete id="delCar">
+        DELETE FROM `car` WHERE phone in
+        <foreach collection="phone" open="(" separator="," close=")" item="phoneitem">
+            #{phoneitem}
+        </foreach>
+        AND goods_id in
+        <foreach collection="list" open="(" separator="," close=")" item="item">
+            #{item}
+        </foreach>
+   </delete>
+    <!--更新购物车-->
+    <update id="updataCar">
+        update car set  num=#{num} where goods_id=#{goodsId} and  phone=#{phone}
+    </update>
+    <!--查询购物车-->
+    <select id="selectCar" resultMap="AllColumnMap">
+        select
+        <include refid="all_column"/>
+        from car where
+        phone=#{phone}
+    </select>
+    <!--    判断购物车里是否有相同商品-->
+    <select id="selectcarById" resultType="java.lang.Integer">
+        select count(*) from car where goods_id=#{goodsId} and  phone=#{phone}
+    </select>
+</mapper>
+

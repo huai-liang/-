@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.shop.rotation.mapper.ImageMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.shop.rotation.model.Image">
+        <result column="id" property="id"/>
+        <result column="img_src" property="imgSrc"/>
+        <result column="keytitle" property="keytitle"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `img_src`,
+        `keytitle`
+    </sql>
+
+
+    <select id="select" resultMap="AllColumnMap">
+     select <include refid="all_column"/>
+     from image LIMIT #{start},#{end}
+    </select>
+
+
+
+    <insert id="add">
+        insert  into image(img_src) values (#{imgSrc})
+    </insert>
+
+
+    <update id="update">
+        update image set img_src=#{imgSrc} where id=#{id}
+    </update>
+
+    <delete id="del">
+        delete from image where id=#{id}
+    </delete>
+</mapper>
+
